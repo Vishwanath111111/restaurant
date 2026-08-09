@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --maroon-900: #2D080E;
+    --maroon-800: #4A0E17;
+    --maroon-700: #6B111D;
+    --maroon-600: #8C1A2B;
+    
+    --gold-300: #FFF3BD;
+    --gold-400: #F3E5AB;
+    --gold-500: #D4AF37;
+    --gold-600: #AA7C11;
+    --gold-700: #886208;
+    
+    --saffron-500: #FF9933;
+    --saffron-600: #E65100;
+    
+    --ivory-50: #FFFFFF;
+    --ivory-100: #FFFDF6;
+    --ivory-200: #FDFBF7;
+    --ivory-300: #F5EFDF;
+    
+    --charcoal-900: #0F0E0E;
+    --charcoal-800: #161414;
+    --charcoal-700: #221F1F;
+    
+    --emerald-600: #097969;
+    --emerald-700: #055C4F;
+    
+    --copper-500: #B87333;
+    --copper-600: #965B24;
+    
+    --background: var(--ivory-100);
+    --foreground: #2C2825;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-jakarta), sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+}
+
+/* Custom Typography & Utility Classes */
+.font-royal {
+  font-family: var(--font-cinzel), serif;
+}
+
+.font-serif-heading {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+/* Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(135deg, #F3E5AB, #D4AF37, #AA7C11) 1;
+}
+
+.maroon-gradient-bg {
+  background: linear-gradient(135deg, #6B111D 0%, #4A0E17 50%, #2D080E 100%);
+}
+
+.charcoal-gradient-bg {
+  background: linear-gradient(135deg, #1A1818 0%, #121212 100%);
+}
+
+/* Royal Cards & Glassmorphism */
+.royal-card {
+  background: rgba(255, 253, 246, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 30px -5px rgba(74, 14, 23, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.royal-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 20px 40px -10px rgba(74, 14, 23, 0.15);
+}
+
+.royal-card-dark {
+  background: rgba(22, 20, 20, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.royal-card-dark:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.1);
+}
+
+.glass-maroon {
+  background: rgba(74, 14, 23, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.glass-dark {
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Indian Architectural Motifs & Patterns */
+.jaali-pattern {
+  background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #4A0E17 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  opacity: 0.05;
+}
+
+.arch-top {
+  border-top-left-radius: 999px;
+  border-top-right-radius: 999px;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulseGold 3s infinite;
+}
+
+.animate-spin-slow {
+  animation: rotateSlow 25s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2D080E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #AA7C11;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
